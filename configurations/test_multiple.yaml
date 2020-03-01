@@ -1,0 +1,168 @@
+action:                                     test_multiple                                             # train, test, test_single, test_multiple
+content_images_path:                        ./../data/testset_content                                 # path to the content images
+style_images_path:                          ./../data/testset_style                                   # path to the style images
+image_saving_path:                          ./data/adain_images                                       # the path example images are saved to
+encoder_model_path:                         ./models/encoder_1_25_6_state_dict.pth                    # path to a pre-trained encoder network 
+pretrained_model_path:                      ./models/ada_in_model_3_2_10.pth                          # path to a pre-trained AdaIN model
+loader:                                     no_norm                                                   # loader, one of (no_norm, std)
+unloader:                                   none                                                      # un-loader, one of (no_norm, saving, std, none)
+imsize:                                     512                                                       # image size
+lambda_1:                                   1                                                         # weighting factor for the style loss (content loss is weighted 1)
+ada_in_module:                              1                                                         # use a mean or a mean+std alignment in the AdaIN module
+number_moments:                             2                                                         # the number of moments to use for loss computation
+number_moments_mom_al:                      3                                                         # the number of moments to align (in the moment alignment module)
+use_moment_alignment_model:                 True                                                      # whether to use a moment alignment module instead of the AdaIN module
+moment_alignment_model_path:                ./models/moment_alignment_model_0_1_3_0                   # the path to the moment alignment model
+url:                                        https://download.pytorch.org/models/vgg19-dcbb9e9d.pth    # URL to the PyTorch pre-trained VGG-19
+model_dir:                                  ./../data/torchvision_models/                             # path to the VGG-19 model
+
+# ---- result images AdaIN + Loss Extend ---- #
+# ---- result images AdaIN + Loss Extend ---- #
+
+image_saving_path_list:                     [
+                                              ./data/result_images_ada_in_2_1_10,
+                                              ./data/result_images_ada_in_2_2_10,
+                                              ./data/result_images_ada_in_2_3_10,
+                                              ./data/result_images_ada_in_2_4_10,
+                                              ./data/result_images_AdaIN+loss_big
+                                            ]
+
+model_path_list: [
+                                              ./models/ada_in_model_2_1_10.pth,
+                                              ./models/ada_in_model_2_2_10.pth,
+                                              ./models/ada_in_model_2_3_10.pth,
+                                              ./models/ada_in_model_2_4_10.pth,
+]
+
+number_moments_list:                          [1, 2, 3, 4]
+ada_in_module_list:                           [2, 2, 2, 2]
+
+use_moment_alignment_model_list:              [False, False, False, False]
+moment_alignment_model_path_list:             ['', '', '', '']
+moment_alignment_model_number_list:           [-1, -1, -1, -1]
+
+# # ---- result images MA + Loss Extend ---- #
+# # ---- result images MA + Loss Extend ---- #
+
+# image_saving_path_list:                       [
+#                                                 ./data/result_images_ada_in_1_1_10,
+#                                                 ./data/result_images_ada_in_2_2_10,
+#                                                 ./data/result_images_ada_in_ma_3_3_10,
+#                                                 ./data/result_images_ada_in_ma_4_4_10,
+#                                                 ./data/result_images_ma+loss_big
+#                                               ]
+
+# model_path_list:                              [
+#                                                 ./models/ada_in_model_1_1_10.pth,
+#                                                 ./models/ada_in_model_2_2_10.pth,
+#                                                 ./models/ada_in_model_3_3_10.pth,
+#                                                 ./models/ada_in_model_4_4_10.pth,
+#                                               ]
+
+# number_moments_list:                          [1, 2, 3, 4]
+# ada_in_module_list:                           [1, 2, 2, 2]
+
+# moment_alignment_model_number_list:           [-1, -1, 3, 4]
+
+# use_moment_alignment_model_list:              [False, False, True, True]
+
+# moment_alignment_model_path_list:             [
+#                                                 -1, -1,
+#                                                 ./models/moment_alignment_model_0_1_3_0,
+#                                                 ./models/moment_alignment_model_0_1_4_0
+#                                               ]
+
+# # ---- result images MA + AdaIN Loss ---- #
+# # ---- result images MA + AdaIN Loss ---- #
+
+# image_saving_path_list:                       [
+#                                                 ./data/result_images_ada_in_1_2_10,
+#                                                 ./data/result_images_ada_in_2_2_10,
+#                                                 ./data/result_images_ada_in_ma_3_2_10,
+#                                                 ./data/result_images_ada_in_ma_4_2_10,
+#                                                 ./data/result_images_ada_in_ma_5_2_10,
+#                                                 ./data/result_images_ma-loss_big
+#                                               ]
+
+
+# model_path_list:                              [
+#                                                 ./models/ada_in_model_1_2_10.pth,
+#                                                 ./models/ada_in_model_2_2_10.pth,
+#                                                 ./models/ada_in_model_3_2_10.pth,
+#                                                 ./models/ada_in_model_4_2_10.pth,
+#                                                 ./models/ada_in_model_5_2_10.pth,
+#                                               ]
+
+# number_moments_list:                          [1, 2, 3, 4, 5]
+
+# ada_in_module_list:                           [1, 2, 2, 2, 2]
+
+# moment_alignment_model_number_list:           [-1, -1, 3, 4, 5]
+
+# use_moment_alignment_model_list:              [False, False, True, True, True]
+
+# moment_alignment_model_path_list:             [
+#                                                 -1, -1,
+#                                                 ./models/moment_alignment_model_0_1_3_0',
+#                                                 ./models/moment_alignment_model_0_1_4_0',
+#                                                 ./models/moment_alignment_model_0_1_5_0'
+#                                               ]
+
+
+# # ---- result images MA + AdaIN Ext Loss ---- #
+# # ---- result images MA + AdaIN Ext Loss ---- #
+
+# image_saving_path_list:                       [
+#                                                 ./data/result_images_ada_in_2_3_10,
+#                                                 ./data/result_images_ada_in_ma_3_3_10,
+#                                                 ./data/result_images_ada_in_2_4_10,
+#                                                 ./data/result_images_ada_in_ma_4_4_10,
+#                                                 ./data/result_images_ma+loss_vs_AdaIN+loss_big
+#                                               ]
+
+# model_path_list:                              [
+#                                                 ./models/ada_in_model_2_3_10.pth,
+#                                                 ./models/ada_in_model_3_3_10.pth,
+#                                                 ./models/ada_in_model_2_4_10.pth,
+#                                                 ./models/ada_in_model_4_4_10.pth,
+#                                               ]
+
+# number_moments_list:                          [3, 3, 4, 4]
+
+# ada_in_module_list:                           [2, -1, 2, -1]
+
+# moment_alignment_model_number_list:           [-1, 3, -1, 4]
+
+# use_moment_alignment_model_list:              [False, True, False, True]
+
+# moment_alignment_model_path_list:             [
+#                                                 -1,
+#                                                 ./models/moment_alignment_model_0_1_3_0,
+#                                                 -1,
+#                                                 ./models/mom_al_model_0_1_4_0,
+#                                               ]
+
+# # ---- result images AdaIN 1-2, 2-2 ---- #
+# # ---- result images AdaIN 1-2, 2-2 ---- #
+
+# image_saving_path_list:                       [
+#                                                 ./data/result_images_ada_in_1_2_10,
+#                                                 ./data/result_images_ada_in_2_2_10,
+#                                                 ./data/result_images_ba_12_22
+#                                               ]
+
+
+# model_path_list:                              [
+#                                                 ./models/ada_in_model_1_2_10.pth,
+#                                                 ./models/ada_in_model_2_2_10.pth,
+#                                               ]
+
+# number_moments_list:                          [2, 2]
+
+# ada_in_module_list:                           [1, 2]
+
+# moment_alignment_model_number_list:           [-1, -1]
+
+# use_moment_alignment_model_list:              [False, False]
+
+# moment_alignment_model_path_list:             [-1, -1]
