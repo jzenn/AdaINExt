@@ -1,18 +1,19 @@
 # Adaptive Instance Normalization Extension (AdaINExt)
 
 This project implements an extension to the Adaptive Instance Normalization approach 
-that was proposed by Huang et al. in **(cite Huang et al.)**.
+that was proposed by Huang et al. in [1].
 
 The extension affects two parts of the original Adaptive Instance Normalization network.
 
 - The actual Adaptive Instance Normalization module is replaced by a Moment Alignment 
-module **(cite B-Thesis)**, that manages to align more than two statistical moments between a content and 
+module, that manages to align more than two statistical moments between a content and 
 a style feature map.
 
 - The decoder loss is extended to handle the alignment of the additional moments by
 simply minimizing the moment loss.
 
-One can see a correlation of #aligned moments and stylization in the result images.  
+One can see a correlation of the number of aligned moments and stylization in the result
+images.  
 
 - The project is written in Python ```3.7``` and uses PyTorch ```1.1``` 
 (also working with PyTorch ```1.3```).
@@ -23,8 +24,8 @@ project.
 ### Network
 
 The network architecture is implemented as proposed by Huang et al. in 
-**(cite Huang et al.)**. The architecture of the moment alignment module can be found 
-in **(cite B-Thesis)** and the GitHub repository **(cite B-Thesis)**.
+[1]. The architecture of the moment alignment module can be found 
+in [2].
 
 ### Loss
  
@@ -53,4 +54,13 @@ Adaptive Instance Normalization network makes up one chapter of the final thesis
 A slightly modified version of the chapter can be found in this repository as a 
 pdf-file. Also, the chapter introduces all related formulas to this work. 
 
-The final thesis can be found **(link here)** in a corrected and modified version. 
+The final thesis can be found [here](https://jzenn.github.io/projects/bsc-thesis) in a corrected and modified version.
+
+## References
+
+[1] X. Huang and S. Belongie. Arbitrary style transfer in real-time with
+adaptive instance normalization. In International Conference on Computer
+Vision (ICCV), 2017.
+
+[2] J. Zenn. Unsupervised Image-to-Image Translation with Induced Feature Statistics. 
+Bachelor Thesis. https://jzenn.github.io/projects/bsc-thesis. 2019.
